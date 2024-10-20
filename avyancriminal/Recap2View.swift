@@ -17,7 +17,6 @@ struct Recap2View: View {
         Text("\(bindedWhere) avenue.")
             .fontWeight(.bold)
             .font(.system(size: 30))
-        
     }
 }
 

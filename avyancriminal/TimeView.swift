@@ -58,10 +58,11 @@ struct TimeView: View {
                 Recap2View(bindedTime: $time, bindedWhere: $location, bindedDate: $date)
             } label: {
                 Text("Triangulation!")
+                }
             }
         }
     }
-}
+
 
 #Preview {
     TimeView()
