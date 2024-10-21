@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentsView: View {
+    @Binding var bindedcompletion1: Bool
+    @Binding var bindedcompletion2: Bool
+    @Binding var bindedcompletion3: Bool
     var body: some View {
         NavigationStack {
             List {
@@ -41,11 +44,22 @@ struct ContentsView: View {
                 .listRowBackground(Color.teal)
                 .padding()
                 .padding()
+                if bindedcompletion1 == true && bindedcompletion2 == true && bindedcompletion3 == true {
+                    NavigationLink {
+                        EndView()
+                    } label: {
+                        Text("SECTION #4 \n#*&%)!#*!#^$&@$^")
+                            .fontWeight(.bold)
+                    }
+                    .listRowBackground(Color.cyan)
+                    .padding()
+                    .padding()
+                }
             }
         }
     }
 }
 
 #Preview {
-    ContentsView()
+    ContentsView(bindedcompletion1: .constant(false), bindedcompletion2: .constant(false), bindedcompletion3: .constant(false))
 }

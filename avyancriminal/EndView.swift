@@ -9,7 +9,12 @@ import SwiftUI
 
 struct EndView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("YOU DID IT!!! 🔥")
+                .font(.system(size: 30))
+                .fontWeight(.bold)
+            Image("explode2")
+        }
     }
 }
 

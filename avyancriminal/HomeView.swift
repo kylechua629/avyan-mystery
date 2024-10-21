@@ -8,64 +8,43 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var x = false
     var body: some View {
 //            ZStack {
                 NavigationStack {
-                        ZStack {
+                        ZStack{
+//
+                            LinearGradient(colors: [Color.orange,Color.green], startPoint: .top, endPoint: .bottom)
+                                .opacity(0.25)
+                                .ignoresSafeArea()
+                            Rectangle()
+                                .cornerRadius(20)
+                                .frame(width: 270, height: 100)
+                                .position(x: 200, y: 90)
                             
-                            ZStack {
-//                                RadialGradient(gradient: Gradient(colors: [Color.gray, Color.clear]),
-//                                               center: .topLeading, startRadius: 100, endRadius: 400)
-//                                    .blendMode(.screen)
-//                                    .ignoresSafeArea()
-//                                
-//                                // Second radial gradient
-//                                RadialGradient(gradient: Gradient(colors: [Color.white, Color.clear]),
-//                                               center: .bottomTrailing, startRadius: 150, endRadius: 400)
-//                                    .blendMode(.screen)
-//                                    .ignoresSafeArea()
-//                                
-//                                // Third radial gradient
-//                                RadialGradient(gradient: Gradient(colors: [Color.white, Color.clear]),
-//                                               center: .center, startRadius: 0, endRadius: 400)
-//                                    .blendMode(.screen)
-//                                    .ignoresSafeArea()
-//                                RadialGradient(gradient: Gradient(colors: [Color.white, Color.clear]),
-//                                               center: .topLeading, startRadius: 120, endRadius: 400)
-//                                    .blendMode(.screen)
-//                                    .ignoresSafeArea()
-                                LinearGradient(colors: [Color.orange,Color.green], startPoint: .top, endPoint: .bottom)
-                                    .opacity(0.25)
-                                    .ignoresSafeArea()
-                                Rectangle()
-                                    .cornerRadius(20)
-                                    .frame(width: 270, height: 100)
-                                    .position(x: 200, y: 90)
-                                
-                                
-                                Text("INCoin Heist!")
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 40))
-                                    .position(x: 200, y: 90)
-                                    .foregroundStyle(.white)
-                                
-                                NavigationLink {
-                                    ContentsView()
-                                }label: {
-                                    ZStack {
-                                        Rectangle()
-                                            .cornerRadius(20)
-                                            .foregroundColor(.green)
-                                            .frame(width: 200 , height: 75)
-                                        Text("START!")
-                                            .font(.system(size: 50, weight: .bold))
-                                    }
-                                    
+                            
+                            Text("INCoin Heist!")
+                                .fontWeight(.bold)
+                                .font(.system(size: 40))
+                                .position(x: 200, y: 90)
+                                .foregroundStyle(.white)
+                            
+                            NavigationLink {
+                                ContentsView(bindedcompletion1: $x, bindedcompletion2: $x, bindedcompletion3: $x)
+                            }label: {
+                                ZStack {
+                                    Rectangle()
+                                        .cornerRadius(20)
+                                        .foregroundColor(.green)
+                                        .frame(width: 200 , height: 75)
+                                    Text("START!")
+                                        .font(.system(size: 50, weight: .bold))
                                 }
-                        
-                        
+                                
                             }
+                        
                         }
+                        
                     }
                 
         

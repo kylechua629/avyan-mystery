@@ -12,36 +12,34 @@ struct MiscellaneousView: View {
     @State var total: String = ""
     
     var body: some View {
-        List {
-            HStack {
-                Text("How did Avyan steal INCoin?")
-                    .fontWeight(.bold)
-                TextField(
-                    "Type Here",
-                    text: $How
-                )
-                .padding()
-            }
-            HStack {
-                Text("Total Stolen: ")
-                    .fontWeight(.bold)
-                TextField(
-                    "$XXXXXX",
-                    text: $total
-                )
-                .padding()
-            }
-        }
-        .navigationTitle("Details of the Incident")
-        
-        
-        
-        TabView {
-            RecapView(bindedTotal: $total, bindedHow: $How)
-                .tabItem {
-                    Image(systemName: "questionmark")
-                    Text("Pop Quiz!")
+        NavigationStack {
+            List {
+                HStack {
+                    Text("How did Avyan steal INCoin?")
+                        .fontWeight(.bold)
+                    TextField(
+                        "Type Here",
+                        text: $How
+                    )
+                    .padding()
                 }
+                HStack {
+                    Text("Total Stolen: ")
+                        .fontWeight(.bold)
+                    TextField(
+                        "$XXXXXX",
+                        text: $total
+                    )
+                    .padding()
+                }
+            }
+            .navigationTitle("Details of the Incident")
+            
+            NavigationLink {
+                RecapView(bindedTotal: $How, bindedHow: $total, completion: false)
+            } label: {
+                Text("Let's Get It Back!")
+            }
         }
     }
 }
